@@ -20,7 +20,9 @@ void loop () {
 	// Imprimiendo valores del angulo del servo
 	Serial.print(" || Angulo: ");
 	Serial.println(angulo);
+  delay(500);
 
 	// Enviando señal de movimiento al servo
 	myServo.write(angulo);
 	delay(15);
+}
