@@ -5,6 +5,8 @@ int sensorHigh = 0;
 const int ledPin = 13;
 
 void setup() {
+  Serial.begin(9600);
+
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH);
 
@@ -26,7 +28,11 @@ void loop() {
 
   int pitch = map(sensorValue, sensorLow, sensorHigh, 50, 4000);
 
-  tone(8, pitch, 20);
+  Serial.print("sensorValue: ");
+  Serial.print(sensorValue);
+  Serial.print(" || Pitch: ");
+  Serial.println(pitch);
 
+  tone(8, pitch, 20);
   delay(10);
 }
